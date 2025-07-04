@@ -179,10 +179,19 @@ section {
 /************************************
 ヘッダー
 ************************************/
+#header {
+  margin: 0 auto;
+  height: 3rem;
+}
 .header {
   display: flex;
   justify-content: space-between;
   padding: 2% 0%;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 .header__inner {
   display: flex;
@@ -200,7 +209,7 @@ section {
 .mainvisual {
   max-width: 100%;
   padding-bottom: 0;
-  padding-top: 3%;
+  padding-top: 3rem;
 }
 /************************************
 特典
@@ -291,7 +300,7 @@ section {
   border-radius: 16px 16px 0 0;
 }
 .voice-box-description {
-  margin: 1%;
+  margin: 5% 10%;
 }
 .voice-box-description p {
   color: #ffa1c1;
@@ -299,6 +308,7 @@ section {
 .voice-box-title {
   font-weight: bold;
   text-align: center;
+  margin: 5%;
 }
 /************************************
 ご予約
@@ -308,10 +318,12 @@ section {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
 .calender iframe {
   display: block;
   margin: 3% auto;
-  width: 80%;
+  width: 100%;
+  height: 1120px;
 }
 
 /************************************
@@ -331,18 +343,6 @@ section {
   padding-top: 1%;
   text-align: center;
   border-radius: 18px 0 0 18px;
-}
-.a-box {
-  border: solid 2px rgba(255, 179, 205, 1);
-  display: none;
-  border-radius: 20px;
-}
-
-.qa-box,
-.a-box {
-  display: flex;
-  align-items: center;
-  margin: 2% 0;
 }
 .qa-container {
   width: 100%;
@@ -365,6 +365,22 @@ section {
   position: relative;
   cursor: pointer;
   transition: all 0.5s ease;
+}
+.a-box {
+  display: flex;
+  align-items: center;
+  margin: 2% 0;
+}
+.qa-box {
+  display: flex;
+  align-items: center;
+  margin: 2% 0;
+}
+.a-box {
+  border: solid 2px rgba(255, 179, 205, 1);
+  display: none;
+  border-radius: 20px;
+  flex-direction: row;
 }
 
 /************************************
@@ -402,8 +418,19 @@ footer p {
 }
 /* スマートフォン用（～768px） */
 @media screen and (max-width: 768px) {
-  body{
+  body {
+    width: 100%;
+  }
+  header,
+  .mainvisual,
+  .voice,
+  .calender,
+  .questions,
+  footer {
     width: 95%;
+  }
+  #header{
+    padding: 2%;
   }
   .voice-container {
     flex-direction: column;
@@ -445,5 +472,11 @@ footer p {
   .a-title,
   .qa-title {
     padding-top: 3%;
+  }
+  .ribon {
+    width: 80%;
+  }
+  .calender iframe {
+    height: 80vh;
   }
 }
