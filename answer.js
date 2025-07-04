@@ -1,10 +1,37 @@
-$('.q-box').on('click', function() {//タイトル要素をクリックしたら
-	var findElm = $(this).next(".a-box");//直後のアコーディオンを行うエリアを取得し
-	$(findElm).slideToggle();//アコーディオンの上下動作
-    
-	if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
-		$(this).removeClass('close');//クラス名を除去し
-	}else{//それ以外は
-		$(this).addClass('close');//クラス名closeを付与
-	}
+$(".q-box").on("click", function () {
+  var findElm = $(this).next(".a-box");
+
+  if (findElm.is(":visible")) {
+    findElm.slideUp();
+    $(this).removeClass("close");
+  } else {
+    findElm.css("display", "flex").hide().slideDown();
+    $(this).addClass("close");
+  }
 });
+
+$(function () {
+  $(window).on("scroll", function () {
+    $(".fade-in").each(function () {
+      const pos = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+      if (scroll > pos - windowHeight + 100) {
+        $(this).addClass("show");
+      }
+    });
+  });
+
+  $(window).trigger("scroll");
+});
+
+ $(function(){
+    $('a[href^="#"]').click(function(e){
+      e.preventDefault();
+      var target = $(this.hash);
+      if (target.length) {
+        var position = target.offset().top;
+        $('html, body').animate({scrollTop: position}, 200);
+      }
+    });
+  });
