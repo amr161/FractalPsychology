@@ -86,14 +86,13 @@ a:hover {
 .fade-in.delay {
   transition-delay: 0.5s;
 }
-
-.fade-up {
+.fade-in-voice {
   opacity: 0;
-  transform: translateY(8%);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.fade-up.show {
+.fade-in-voice.show {
   opacity: 1;
   transform: translateY(0);
 }
@@ -423,14 +422,13 @@ footer p {
     width: 100%;
   }
   header,
-  .mainvisual,
   .voice,
   .calender,
   .questions,
   footer {
     width: 95%;
   }
-  #header{
+  #header {
     padding: 2%;
   }
   .voice-container {
@@ -452,6 +450,7 @@ footer p {
   }
   .section-sub-title {
     font-size: 0.9rem;
+    padding: 4%;
   }
   .pink__button {
     font-size: 0.9rem;
@@ -479,5 +478,6 @@ footer p {
   }
   .calender iframe {
     height: 80vh;
+    max-height: 550px;
   }
 }
